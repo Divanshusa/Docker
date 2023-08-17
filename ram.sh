@@ -1,6 +1,4 @@
 #! /bin/bash
-sudo yum update -y
-sudo yum install -y httpd.x86_64
-sudo systemctl start httpd.service
-sudo systemctl enable httpd.service
+docker build -t web .
+docker run -dit -p 8081:80 --name web1 web 
 
